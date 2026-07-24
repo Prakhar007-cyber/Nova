@@ -1,26 +1,180 @@
 @import "tailwindcss";
 
+/* ============================================================
+   NOVA — Design System
+   Deep near-black canvas, glass surfaces, controlled indigo/
+   violet accents, soft cyan highlights. Cinematic + minimal.
+   ============================================================ */
+
+@theme {
+  /* Base canvas */
+  --color-ink-950: #050609;
+  --color-ink-900: #07080d;
+  --color-ink-850: #0a0c13;
+  --color-ink-800: #0e1017;
+  --color-ink-700: #14161f;
+  --color-ink-600: #1b1e29;
+
+  /* Text */
+  --color-mist-50: #f5f6fb;
+  --color-mist-100: #e7e9f2;
+  --color-mist-200: #c7cad8;
+  --color-mist-300: #9a9fb3;
+  --color-mist-400: #6f7488;
+  --color-mist-500: #4d5164;
+
+  /* Accents — restrained indigo → violet, soft cyan highlight */
+  --color-iris-300: #b9aeff;
+  --color-iris-400: #9a86ff;
+  --color-iris-500: #7c66ff;
+  --color-iris-600: #6248e6;
+  --color-violet-500: #a066ff;
+  --color-cyan-300: #8ff0ff;
+  --color-cyan-400: #52d9f0;
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  --radius-4xl: 2rem;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-quint: cubic-bezier(0.83, 0, 0.17, 1);
+
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-marquee-slow: marquee 60s linear infinite;
+  --animate-float: float 8s ease-in-out infinite;
+  --animate-spin-slow: spin 14s linear infinite;
+  --animate-shimmer: shimmer 2.4s linear infinite;
+  --animate-pulse-glow: pulseGlow 3.4s ease-in-out infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+@keyframes shimmer {
+  from { background-position: 200% 0; }
+  to { background-position: -200% 0; }
+}
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: var(--color-ink-950);
+  --foreground: var(--color-mist-100);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  border-color: color-mix(in oklab, var(--color-mist-200) 8%, transparent);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: auto; /* Lenis handles smoothing */
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  overflow-x: clip;
+  /* faint radial ambience anchored top */
+  background-image:
+    radial-gradient(1200px 700px at 50% -10%, color-mix(in oklab, var(--color-iris-500) 12%, transparent), transparent 70%),
+    radial-gradient(900px 600px at 85% 5%, color-mix(in oklab, var(--color-cyan-400) 6%, transparent), transparent 70%);
+}
+
+/* Lenis */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: clip; }
+
+::selection {
+  background: color-mix(in oklab, var(--color-iris-500) 40%, transparent);
+  color: var(--color-mist-50);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: color-mix(in oklab, var(--color-mist-400) 30%, transparent);
+  border-radius: 999px;
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover { background: color-mix(in oklab, var(--color-mist-300) 45%, transparent); background-clip: padding-box; }
+
+/* ---------- Utilities ---------- */
+@layer utilities {
+  .glass {
+    background: color-mix(in oklab, var(--color-mist-50) 4%, transparent);
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    border: 1px solid color-mix(in oklab, var(--color-mist-100) 9%, transparent);
+  }
+  .glass-strong {
+    background: color-mix(in oklab, var(--color-mist-50) 7%, transparent);
+    backdrop-filter: blur(28px) saturate(150%);
+    -webkit-backdrop-filter: blur(28px) saturate(150%);
+    border: 1px solid color-mix(in oklab, var(--color-mist-100) 12%, transparent);
+  }
+  .text-gradient {
+    background: linear-gradient(100deg, var(--color-mist-50) 0%, var(--color-iris-300) 45%, var(--color-cyan-300) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .text-gradient-iris {
+    background: linear-gradient(100deg, var(--color-iris-400), var(--color-violet-500) 60%, var(--color-cyan-400));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .border-hairline { border: 1px solid color-mix(in oklab, var(--color-mist-100) 10%, transparent); }
+  .ring-glow {
+    box-shadow:
+      0 0 0 1px color-mix(in oklab, var(--color-iris-400) 30%, transparent),
+      0 0 40px -6px color-mix(in oklab, var(--color-iris-500) 45%, transparent);
+  }
+  .grain::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    pointer-events: none;
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .mask-fade-x {
+    -webkit-mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+  }
+  .mask-fade-b {
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent);
+    mask-image: linear-gradient(to bottom, black 60%, transparent);
+  }
+}
+
+/* Hide native cursor when custom cursor active (desktop only) */
+@media (hover: hover) and (pointer: fine) {
+  .custom-cursor-active,
+  .custom-cursor-active * { cursor: none !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
