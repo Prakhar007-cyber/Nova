@@ -54,7 +54,7 @@ function Head({ icon: Icon, title, desc }: { icon: React.ElementType; title: str
   return (
     <div className="relative z-10">
       <div className="inline-flex items-center gap-2 text-mist-100">
-        <span className="grid h-8 w-8 place-items-center rounded-lg bg-mist-50/[0.06] text-iris-300">
+        <span className="grid h-8 w-8 place-items-center rounded-lg bg-mist-50/6 text-iris-300">
           <Icon className="h-4 w-4" strokeWidth={1.8} />
         </span>
         <span className="text-[15px] font-medium">{title}</span>
@@ -75,7 +75,7 @@ function Waveform() {
           return (
             <motion.span
               key={i}
-              className="h-full w-1 flex-1 rounded-full bg-gradient-to-t from-iris-500/40 via-iris-400/70 to-cyan-300/90"
+              className="h-full w-1 flex-1 rounded-full bg-linear-to-t from-iris-500/40 via-iris-400/70 to-cyan-300/90"
               animate={{ scaleY: [0.18 * env, env, 0.4 * env, 0.85 * env, 0.18 * env] }}
               transition={{
                 duration: 1.5,
@@ -112,7 +112,7 @@ function Avatars() {
         <motion.div
           key={i}
           className={cn(
-            "-ml-2 h-9 w-9 rounded-full border-2 border-ink-850 bg-gradient-to-br first:ml-0",
+            "-ml-2 h-9 w-9 rounded-full border-2 border-ink-850 bg-linear-to-br first:ml-0",
             g
           )}
           initial={{ opacity: 0, scale: 0, x: -8 }}
@@ -194,7 +194,7 @@ function MiniChart() {
       {[45, 62, 40, 78, 66, 90].map((h, i) => (
         <motion.div
           key={i}
-          className="flex-1 rounded-t bg-gradient-to-t from-iris-500/40 to-cyan-400/70"
+          className="flex-1 rounded-t bg-linear-to-t from-iris-500/40 to-cyan-400/70"
           initial={{ height: 0 }}
           animate={inView ? { height: `${h}%` } : {}}
           transition={{ duration: 0.7, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
