@@ -155,7 +155,7 @@ export default function AuthExperience({ initialMode }: { initialMode: Mode }) {
   );
 
   return (
-    <main className="relative flex min-h-[100svh] flex-col overflow-hidden bg-ink-950 md:flex-row">
+    <main className="relative flex min-h-svh flex-col overflow-hidden bg-ink-950 md:flex-row">
       {VisualPanel}
       {FormPanel}
     </main>
