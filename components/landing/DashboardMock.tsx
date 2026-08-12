@@ -104,7 +104,7 @@ export default function DashboardMock() {
         {/* sidebar */}
         <aside className="border-r border-mist-100/8 p-3 max-md:hidden">
           <div className="flex items-center gap-2 px-2 py-2">
-            <div className="grid h-7 w-7 place-items-center rounded-lg bg-gradient-to-br from-iris-400 to-cyan-400 text-ink-950">
+            <div className="grid h-7 w-7 place-items-center rounded-lg bg-linear-to-br from-iris-400 to-cyan-400 text-ink-950">
               <Sparkles className="h-4 w-4" />
             </div>
             <span className="text-sm font-semibold text-mist-100">Atlas Labs</span>
@@ -125,12 +125,12 @@ export default function DashboardMock() {
               </div>
             ))}
           </nav>
-          <div className="mt-6 rounded-xl border border-iris-400/20 bg-iris-500/[0.06] p-3">
+          <div className="mt-6 rounded-xl border border-iris-400/20 bg-iris-500/6 p-3">
             <div className="flex items-center gap-1.5 text-[11px] font-medium text-iris-300">
               <Sparkles className="h-3 w-3" /> AI credits
             </div>
             <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-ink-700">
-              <div className="h-full w-2/3 rounded-full bg-gradient-to-r from-iris-400 to-cyan-400" />
+              <div className="h-full w-2/3 rounded-full bg-linear-to-r from-iris-400 to-cyan-400" />
             </div>
             <div className="mt-1.5 text-[10px] text-mist-400">6,400 left this month</div>
           </div>
@@ -146,7 +146,7 @@ export default function DashboardMock() {
             <div className="grid h-8 w-8 place-items-center rounded-lg border border-mist-100/8 text-mist-400">
               <Bell className="h-3.5 w-3.5" />
             </div>
-            <div className="h-8 w-8 rounded-full bg-gradient-to-br from-violet-500 to-cyan-400" />
+            <div className="h-8 w-8 rounded-full bg-linear-to-br from-violet-500 to-cyan-400" />
           </div>
 
           <div className="mt-4 grid grid-cols-2 gap-3 max-lg:grid-cols-1">
@@ -162,7 +162,7 @@ export default function DashboardMock() {
                 </span>
               </div>
               <div className="mt-3 flex justify-end">
-                <div className="max-w-[80%] rounded-2xl rounded-tr-sm bg-mist-50/[0.06] px-3 py-2 text-[12px] leading-relaxed text-mist-200">
+                <div className="max-w-[80%] rounded-2xl rounded-tr-sm bg-mist-50/6 px-3 py-2 text-[12px] leading-relaxed text-mist-200">
                   {typed}
                   <span className="ml-0.5 inline-block h-3 w-px translate-y-0.5 bg-iris-300 animate-pulse" />
                 </div>
@@ -219,7 +219,7 @@ export default function DashboardMock() {
                 {[40, 62, 48, 78, 56, 90, 72].map((h, i) => (
                   <motion.div
                     key={i}
-                    className="flex-1 rounded-t bg-gradient-to-t from-iris-500/40 to-cyan-400/70"
+                    className="flex-1 rounded-t bg-linear-to-t from-iris-500/40 to-cyan-400/70"
                     initial={{ height: 0 }}
                     animate={inView ? { height: `${h}%` } : { height: 0 }}
                     transition={{ duration: 0.8, delay: i * 0.06, ease: [0.16, 1, 0.3, 1] }}
