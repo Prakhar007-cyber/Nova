@@ -64,7 +64,7 @@ export default function SignUpForm({ onSwitch }: { onSwitch: () => void }) {
         variants={item}
         type="button"
         data-cursor="hover"
-        className="mt-6 flex w-full items-center justify-center gap-2.5 rounded-xl border border-mist-100/12 bg-mist-50/[0.03] py-3 text-[14px] font-medium text-mist-100 transition-colors hover:bg-mist-50/[0.07] active:scale-[0.99]"
+        className="mt-6 flex w-full items-center justify-center gap-2.5 rounded-xl border border-mist-100/12 bg-mist-50/3 py-3 text-[14px] font-medium text-mist-100 transition-colors hover:bg-mist-50/[0.07] active:scale-[0.99]"
       >
         <GoogleIcon className="h-4 w-4" /> Sign up with Google
       </motion.button>
@@ -155,7 +155,7 @@ export default function SignUpForm({ onSwitch }: { onSwitch: () => void }) {
             if (errors.agree) setErrors((e) => ({ ...e, agree: "" }));
           }}
           className={cn(
-            "mt-0.5 grid h-4.5 w-4.5 shrink-0 place-items-center rounded-[6px] border transition-colors",
+            "mt-0.5 grid h-4.5 w-4.5 shrink-0 place-items-center rounded-md border transition-colors",
             agree ? "border-iris-400 bg-iris-500" : "border-mist-100/20 bg-transparent",
             errors.agree && "border-rose-400/60"
           )}
