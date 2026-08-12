@@ -55,7 +55,7 @@ export default function SignInForm({ onSwitch }: { onSwitch: () => void }) {
         variants={item}
         type="button"
         data-cursor="hover"
-        className="mt-8 flex w-full items-center justify-center gap-2.5 rounded-xl border border-mist-100/12 bg-mist-50/[0.03] py-3 text-[14px] font-medium text-mist-100 transition-colors hover:bg-mist-50/[0.07] active:scale-[0.99]"
+        className="mt-8 flex w-full items-center justify-center gap-2.5 rounded-xl border border-mist-100/12 bg-mist-50/3 py-3 text-[14px] font-medium text-mist-100 transition-colors hover:bg-mist-50/[0.07] active:scale-[0.99]"
       >
         <GoogleIcon className="h-4 w-4" /> Continue with Google
       </motion.button>

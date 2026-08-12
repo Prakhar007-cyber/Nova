@@ -55,7 +55,7 @@ export default function AuthInput({
         {/* animated gradient border on focus */}
         <span
           className={cn(
-            "pointer-events-none absolute inset-0 rounded-xl p-px opacity-0 transition-opacity duration-300 [background:linear-gradient(120deg,#9a86ff,#52d9f0)] [mask:linear-gradient(#000_0_0)_content-box,linear-gradient(#000_0_0)] [mask-composite:exclude]",
+            "pointer-events-none absolute inset-0 rounded-xl p-px opacity-0 transition-opacity duration-300 [background:linear-gradient(120deg,#9a86ff,#52d9f0)] [mask:linear-gradient(#000_0_0)_content-box,linear-gradient(#000_0_0)] mask-exclude",
             focused && !error && "opacity-100"
           )}
         />
