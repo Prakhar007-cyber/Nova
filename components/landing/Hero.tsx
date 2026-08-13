@@ -44,7 +44,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-[100svh] w-full overflow-hidden pt-32">
+    <section className="relative min-h-svh w-full overflow-hidden pt-32">
       <HeroBackground />
 
       <div className="relative z-10 mx-auto flex max-w-6xl flex-col items-center px-6 text-center">
@@ -54,9 +54,9 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease }}
           data-cursor="hover"
-          className="group inline-flex items-center gap-2 rounded-full border border-mist-100/12 bg-mist-50/[0.04] px-3.5 py-1.5 text-[13px] text-mist-300 backdrop-blur-md transition-colors hover:text-mist-100"
+          className="group inline-flex items-center gap-2 rounded-full border border-mist-100/12 bg-mist-50/4 px-3.5 py-1.5 text-[13px] text-mist-300 backdrop-blur-md transition-colors hover:text-mist-100"
         >
-          <span className="grid h-4 w-4 place-items-center rounded-full bg-gradient-to-br from-iris-400 to-cyan-400 text-ink-950">
+          <span className="grid h-4 w-4 place-items-center rounded-full bg-linear-to-br from-iris-400 to-cyan-400 text-ink-950">
             <Sparkles className="h-2.5 w-2.5" />
           </span>
           Introducing NOVA 2.0 — the AI-native workspace
@@ -73,7 +73,7 @@ export default function Hero() {
             Think faster.
           </motion.span>
           <motion.span
-            className="block bg-[linear-gradient(100deg,#b9aeff,#a066ff_45%,#52d9f0)] bg-[length:200%_auto] bg-clip-text text-transparent animate-shimmer"
+            className="block bg-[linear-gradient(100deg,#b9aeff,#a066ff_45%,#52d9f0)] bg-size-[200%_auto] bg-clip-text text-transparent animate-shimmer"
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease, delay: 0.16 }}

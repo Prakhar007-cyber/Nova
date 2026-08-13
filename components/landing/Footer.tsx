@@ -76,7 +76,7 @@ export default function Footer() {
 
       {/* oversized wordmark watermark */}
       <div className="pointer-events-none mt-10 select-none overflow-hidden">
-        <div className="mask-fade-b text-center text-[clamp(4rem,22vw,18rem)] font-semibold leading-none tracking-tighter text-mist-100/[0.03]">
+        <div className="mask-fade-b text-center text-[clamp(4rem,22vw,18rem)] font-semibold leading-none tracking-tighter text-mist-100/3">
           NOVA
         </div>
       </div>

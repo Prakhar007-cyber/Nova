@@ -49,7 +49,7 @@ export default function FinalCTA() {
           }}
         />
         <div className="relative">
-          <h2 className="mx-auto max-w-3xl text-[clamp(2.2rem,6vw,4.5rem)] font-semibold leading-[1] tracking-[-0.03em] text-mist-50">
+          <h2 className="mx-auto max-w-3xl text-[clamp(2.2rem,6vw,4.5rem)] font-semibold leading-none tracking-[-0.03em] text-mist-50">
             <MaskText text="Your next great idea starts here." />
           </h2>
           <Reveal delay={0.15}>
