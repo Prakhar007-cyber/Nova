@@ -18,7 +18,7 @@ export function WorkspaceVisual() {
     { w: "78%", d: 0.8 },
   ];
   return (
-    <div ref={ref} className="relative h-full min-h-[300px] w-full overflow-hidden rounded-2xl border border-mist-100/8 bg-ink-850/60 p-5">
+    <div ref={ref} className="relative h-full min-h-75 w-full overflow-hidden rounded-2xl border border-mist-100/8 bg-ink-850/60 p-5">
       <div className="flex items-center gap-2 text-[12px] text-mist-400">
         <FileText className="h-4 w-4" /> Product Brief — Draft
         <span className="ml-auto flex items-center gap-1 rounded-full bg-iris-500/12 px-2 py-0.5 text-[10px] text-iris-300">
@@ -37,7 +37,7 @@ export function WorkspaceVisual() {
         {lines.map((l, i) => (
           <motion.div
             key={i}
-            className="h-2.5 rounded-full bg-gradient-to-r from-mist-100/18 to-mist-100/5"
+            className="h-2.5 rounded-full bg-linear-to-r from-mist-100/18 to-mist-100/5"
             initial={{ width: 0, opacity: 0 }}
             animate={inView ? { width: l.w, opacity: 1 } : {}}
             transition={{ duration: 0.7, delay: l.d, ease }}
@@ -72,14 +72,14 @@ export function AutomationVisual() {
     ["42,55", "74,74"],
   ];
   return (
-    <div ref={ref} className="relative h-full min-h-[300px] w-full overflow-hidden rounded-2xl border border-mist-100/8 bg-ink-850/60 p-5">
+    <div ref={ref} className="relative h-full min-h-75 w-full overflow-hidden rounded-2xl border border-mist-100/8 bg-ink-850/60 p-5">
       <div className="flex items-center gap-2 text-[12px] text-mist-400">
         <GitBranch className="h-4 w-4" /> Flow — Inbox automation
         <span className="ml-auto flex items-center gap-1 rounded-full bg-emerald-500/12 px-2 py-0.5 text-[10px] text-emerald-300">
           <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse-glow" /> Live
         </span>
       </div>
-      <svg viewBox="0 0 100 100" className="mt-2 h-[240px] w-full" preserveAspectRatio="none">
+      <svg viewBox="0 0 100 100" className="mt-2 h-60 w-full" preserveAspectRatio="none">
         {edges.map(([a, b], i) => {
           const [x1, y1] = a.split(",").map(Number);
           const [x2, y2] = b.split(",").map(Number);
@@ -148,7 +148,7 @@ export function InsightsVisual() {
   const inView = useInView(ref, { margin: "-15%" });
   const bars = [38, 55, 44, 68, 60, 82, 74, 95];
   return (
-    <div ref={ref} className="relative h-full min-h-[300px] w-full overflow-hidden rounded-2xl border border-mist-100/8 bg-ink-850/60 p-5">
+    <div ref={ref} className="relative h-full min-h-75 w-full overflow-hidden rounded-2xl border border-mist-100/8 bg-ink-850/60 p-5">
       <div className="flex items-center gap-2 text-[12px] text-mist-400">
         <TrendingUp className="h-4 w-4" /> Insights — Productivity
       </div>
@@ -170,7 +170,7 @@ export function InsightsVisual() {
         {bars.map((h, i) => (
           <motion.div
             key={i}
-            className="flex-1 rounded-t bg-gradient-to-t from-iris-500/30 via-iris-400/60 to-cyan-400/80"
+            className="flex-1 rounded-t bg-linear-to-t from-iris-500/30 via-iris-400/60 to-cyan-400/80"
             initial={{ height: 0 }}
             animate={inView ? { height: `${h}%` } : {}}
             transition={{ duration: 0.8, delay: i * 0.05, ease }}
