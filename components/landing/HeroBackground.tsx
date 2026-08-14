@@ -77,7 +77,7 @@ export default function HeroBackground() {
       <div ref={glowRef} className="absolute inset-0" />
 
       {/* horizon line + fade to canvas */}
-      <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-ink-950 to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 h-64 bg-linear-to-t from-ink-950 to-transparent" />
     </div>
   );
 }
