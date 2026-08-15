@@ -54,7 +54,7 @@ export default function Navbar() {
               className="group relative px-3.5 py-2 text-[14px] text-mist-300 transition-colors hover:text-mist-50"
             >
               {l.label}
-              <span className="absolute inset-x-3.5 bottom-1.5 h-px origin-left scale-x-0 bg-gradient-to-r from-iris-400 to-cyan-400 transition-transform duration-300 group-hover:scale-x-100" />
+              <span className="absolute inset-x-3.5 bottom-1.5 h-px origin-left scale-x-0 bg-linear-to-r from-iris-400 to-cyan-400 transition-transform duration-300 group-hover:scale-x-100" />
             </button>
           ))}
         </div>
