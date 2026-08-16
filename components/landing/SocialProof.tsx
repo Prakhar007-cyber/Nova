@@ -75,13 +75,13 @@ export default function SocialProof() {
           {[...testimonials, ...testimonials].map((t, i) => (
             <figure
               key={i}
-              className="w-[340px] shrink-0 rounded-2xl border border-mist-100/8 bg-ink-850/50 p-5"
+              className="w-85 shrink-0 rounded-2xl border border-mist-100/8 bg-ink-850/50 p-5"
             >
               <blockquote className="text-[14.5px] leading-relaxed text-mist-200">
                 “{t.q}”
               </blockquote>
               <figcaption className="mt-4 flex items-center gap-3">
-                <span className="h-8 w-8 rounded-full bg-gradient-to-br from-iris-400 to-cyan-400" />
+                <span className="h-8 w-8 rounded-full bg-linear-to-br from-iris-400 to-cyan-400" />
                 <span className="text-[12px]">
                   <span className="block text-mist-100">{t.a}</span>
                   <span className="text-mist-500">{t.r}</span>
