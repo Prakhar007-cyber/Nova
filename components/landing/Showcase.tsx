@@ -123,7 +123,7 @@ export default function Showcase() {
           </div>
 
           {/* response area */}
-          <div className="relative mt-6 min-h-[180px] rounded-2xl border border-mist-100/8 bg-ink-850/50 p-5">
+          <div className="relative mt-6 min-h-45 rounded-2xl border border-mist-100/8 bg-ink-850/50 p-5">
             <AnimatePresence mode="wait">
               {active === null ? (
                 <motion.div
@@ -131,7 +131,7 @@ export default function Showcase() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  className="flex h-full min-h-[140px] flex-col items-center justify-center text-center text-mist-500"
+                  className="flex h-full min-h-35 flex-col items-center justify-center text-center text-mist-500"
                 >
                   <Sparkles className="h-6 w-6 text-iris-400/60" />
                   <p className="mt-3 text-[13px]">Select a prompt above to see NOVA respond</p>
@@ -144,7 +144,7 @@ export default function Showcase() {
                   exit={{ opacity: 0 }}
                 >
                   <div className="flex items-start gap-3">
-                    <span className="mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-lg bg-gradient-to-br from-iris-400 to-cyan-400 text-ink-950">
+                    <span className="mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-lg bg-linear-to-br from-iris-400 to-cyan-400 text-ink-950">
                       <Sparkles className="h-4 w-4" />
                     </span>
                     <p className="text-[14.5px] leading-relaxed text-mist-200">
