@@ -39,7 +39,7 @@ export function Logo({ className, href = "/" }: { className?: string; href?: str
         className
       )}
     >
-      <span className="transition-transform duration-500 group-hover:rotate-[90deg]">
+      <span className="transition-transform duration-500 group-hover:rotate-90">
         <LogoMark />
       </span>
       <span className="text-[19px] font-semibold tracking-tight">
