@@ -82,12 +82,12 @@ export default function Cursor() {
     <>
       <div
         ref={dotRef}
-        className="pointer-events-none fixed left-0 top-0 z-[100] h-1.5 w-1.5 rounded-full bg-mist-50 mix-blend-difference"
+        className="pointer-events-none fixed left-0 top-0 z-100 h-1.5 w-1.5 rounded-full bg-mist-50 mix-blend-difference"
       />
       <div
         ref={ringRef}
         data-hover="false"
-        className="pointer-events-none fixed left-0 top-0 z-[100] h-8 w-8 rounded-full border border-mist-200/60 mix-blend-difference transition-[background-color,border-color] duration-300 data-[hover=true]:border-transparent data-[hover=true]:bg-mist-50/90"
+        className="pointer-events-none fixed left-0 top-0 z-100 h-8 w-8 rounded-full border border-mist-200/60 mix-blend-difference transition-[background-color,border-color] duration-300 data-[hover=true]:border-transparent data-[hover=true]:bg-mist-50/90"
       />
     </>
   );

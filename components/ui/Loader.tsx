@@ -51,7 +51,7 @@ export default function Loader() {
     <AnimatePresence>
       {!done && (
         <motion.div
-          className="fixed inset-0 z-[200] flex flex-col items-center justify-center bg-ink-950"
+          className="fixed inset-0 z-200 flex flex-col items-center justify-center bg-ink-950"
           exit={{ opacity: 0 }}
           transition={{ duration: 0.6, ease: [0.83, 0, 0.17, 1] }}
         >
@@ -70,7 +70,7 @@ export default function Loader() {
           </div>
           <div className="mt-4 h-px w-40 overflow-hidden bg-mist-500/20">
             <motion.div
-              className="h-full bg-gradient-to-r from-iris-400 to-cyan-400"
+              className="h-full bg-linear-to-r from-iris-400 to-cyan-400"
               style={{ width: `${count}%` }}
             />
           </div>
